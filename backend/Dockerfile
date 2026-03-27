@@ -1,15 +1,15 @@
-#빌드 단계
-FROM gradle:8.14.4-jdk17 AS builder
+# #빌드 단계
+# FROM gradle:8.14.4-jdk17 AS builder
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY build.gradle   ./
-COPY settings.gradle    ./
+# COPY build.gradle   ./
+# COPY settings.gradle    ./
 
-RUN gradle dependencies --no-daemon # 의존성 주입하는 코드
+# RUN gradle dependencies --no-daemon # 의존성 주입하는 코드
 
-COPY ./src  ./src
-RUN gradle bootjar --no-daemon # 컨테이너 안에서 jar파일이 만들어짐
+# COPY ./src  ./src
+# RUN gradle bootjar --no-daemon # 컨테이너 안에서 jar파일이 만들어짐
 
 
 
